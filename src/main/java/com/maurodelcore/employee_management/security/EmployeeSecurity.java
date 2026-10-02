@@ -93,6 +93,7 @@ public class EmployeeSecurity {
                         .deleteCookies("JSESSIONID")
                         .logoutSuccessHandler((request, response, authentication) -> {
                             response.setStatus(200);
+                            response.setContentType("text/plain");
                             response.getWriter().write("Logout success");
                         })
                 );
